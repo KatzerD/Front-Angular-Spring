@@ -1,0 +1,11 @@
+.full-width-table {
+ width: 100%;
+}
+
+#clientes-table{
+  margin: 3rem;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}

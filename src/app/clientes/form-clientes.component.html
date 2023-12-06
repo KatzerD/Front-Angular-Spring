@@ -1,0 +1,25 @@
+<mat-card class="contenedor">
+    <mat-card-content>
+        <form action="POST" (ngSubmit)="create()" id="formulario-clientes">
+            <mat-form-field>
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="Ej.: Enrique" [(ngModel)]="cliente.nombre">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Apellido</mat-label>
+                <input matInput placeholder="Ej.: Centurion" [(ngModel)]="cliente.apellido">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>E-mail</mat-label>
+                <input matInput placeholder="Ej.: email@ejemplo.com" [(ngModel)]="cliente.email">
+            </mat-form-field>
+            <br>
+        </form>
+    </mat-card-content>
+
+    <mat-card-actions>
+        <button mat-raised-button type="submit" color="primary">Guardar</button>
+    </mat-card-actions>
+</mat-card>
