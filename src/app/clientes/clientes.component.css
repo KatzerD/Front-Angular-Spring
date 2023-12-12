@@ -9,3 +9,8 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
+.btn-crear-cliente{
+  background-color: #45aa43;
+  margin-right: 1rem;
+}

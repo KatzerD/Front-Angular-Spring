@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ClientesDataSource } from '../../clientes/clientes-datasource'
 import { Observable, of } from 'rxjs'
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ClientesItem } from '../../clientes/clientes-item';
 
 @Injectable({
@@ -9,7 +9,9 @@ import { ClientesItem } from '../../clientes/clientes-item';
 })
 export class ClientesService {
 
-  private url: String = "http://localhost:8080/api";
+  private url: string = "http://localhost:8080/api";
+
+  private  _httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
   constructor(
     private _http: HttpClient
@@ -23,6 +25,10 @@ export class ClientesService {
   //Con la Api Rest
   getClientes(): Observable<ClientesItem[]>{
     return this._http.get<ClientesItem[]>(this.url+"/clientes");
+  }
+
+  create(cliente: ClientesItem): Observable<ClientesItem>{
+    return this._http.post<ClientesItem>(this.url, cliente, {headers: this._httpHeaders});
   }
 }
 
