@@ -7,10 +7,8 @@ import { catchError, startWith, switchMap } from 'rxjs/operators';
 import { ClientesService } from '../servicios/clientes/clientes.service';
 import { ClientesItem } from './clientes-item';
 
-const EXAMPLE_DATA: ClientesItem[] = [];
-
 export class ClientesDataSource extends DataSource<ClientesItem> {
-  data: ClientesItem[] = EXAMPLE_DATA;
+  data: ClientesItem[] = [];
   paginator: MatPaginator | undefined;
   sort: MatSort | undefined;
 
@@ -25,9 +23,7 @@ export class ClientesDataSource extends DataSource<ClientesItem> {
       return merge(this.paginator.page, this.sort.sortChange)
         .pipe(
           startWith({}),
-          switchMap(() => {
-            return this.clienteService.getClientes();
-          }),
+          switchMap(() => this.clienteService.getClientes()),
           map((data) => {
             this.data = this.getPagedData(this.getSortedData([...data]))
             return this.data

@@ -7,6 +7,14 @@
 .contenedor {
     display: flex;
     flex-direction: column;
-    margin:5rem auto;
+    margin:12rem auto;
     max-width: 800px;
 }  
+
+.errores{
+    margin-top: 10px;
+    background-color: rgb(255, 128, 128);
+    color: rgb(168, 7, 7);
+    position: absolute;
+    align-self: center
+}

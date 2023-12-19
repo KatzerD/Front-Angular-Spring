@@ -5,13 +5,14 @@ export class ClientesItem {
   public email: string;
   public createAt: string;
   
-    constructor(
-      
-      ){ 
-        this.id = 0;
-        this.nombre = "";
-        this.apellido = "";
-        this.email = "";
-        this.createAt = "";
-      }
-  } 
+  constructor(
+  
+  ){ 
+    this.id = 0
+    this.nombre = "";
+    this.apellido = "";
+    this.email = "";
+    this.createAt = "";
+  }
+
+} 
